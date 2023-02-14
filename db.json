@@ -1,0 +1,56 @@
+{
+  "country": [
+    {
+      "id": "FR",
+      "name": "France"
+    },
+    {
+      "id": "SW",
+      "name": "Sweden"
+    }
+  ],
+  "lab": [
+    {
+      "id": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "name": "Lorem lab"
+    },
+    {
+      "id": "0658b46a-abe2-11ed-afa1-0242ac13",
+      "name": "Ipsum lab"
+    }
+  ],
+  "stain": [
+    {
+      "labId": "adfafafadsf",
+      "description": "json server",
+      "id": 1
+    }
+  ],
+  "group": [
+    {
+      "labId": "adfafafadsf",
+      "description": "json server",
+      "stains": "[{\"id\": \"algo}, {\"id\": \"otra cosa\"}]",
+      "id": 1
+    },
+    {
+      "labId": "adfafafadsf",
+      "description": "json server",
+      "stains": "[{\"id\": \"algo}, {\"id\": \"otra cosa\"}]",
+      "id": 2
+    },
+    {
+      "labId": "adfafafadsf",
+      "description": "json server",
+      "stains": [
+        {
+          "id": "algo"
+        },
+        {
+          "id": "otra cosa"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}
