@@ -1,3 +1,7 @@
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primeicons/primeicons.css';
+
 import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
