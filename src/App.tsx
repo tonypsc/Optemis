@@ -1,9 +1,5 @@
 import { Suspense } from 'react';
-import {
-  QueryClient,
-  QueryClientProvider,
-  QueryErrorResetBoundary,
-} from 'react-query';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { Home } from './home';
 import { LoadingView } from './shared';

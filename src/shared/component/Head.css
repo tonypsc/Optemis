@@ -1,0 +1,11 @@
+.banner {
+  background-color: #026eb5 ;
+  height: 100px;
+  display: flex;
+  justify-content: start;
+  padding: 1rem;
+}
+
+.title {
+  color: #fff;
+}

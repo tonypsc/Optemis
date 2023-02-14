@@ -15,6 +15,8 @@ const client = async (
     signal,
   };
 
+  console.log(`${apiUrl}/${endpoint}`);
+
   const response = await fetch(`${apiUrl}/${endpoint}`, options);
   const data = await response.json();
 
@@ -47,7 +49,7 @@ const read = async <T extends Resource>(
     signal,
   });
 
-  return data as T;
+  return data as T[];
 };
 
 const create = async <T extends Resource>(
