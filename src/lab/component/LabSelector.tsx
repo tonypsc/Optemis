@@ -10,7 +10,7 @@ import { useLabs } from '../hook/useLabs';
 
 import './LabSelector.css';
 
-const LabSelector = () => {
+const LabSelector = ({ onSelectLab, onChangeAllowDuplicates }: Props) => {
   const [country, selectCountry] = useState<Country>();
   const [lab, selectLab] = useState<Lab>();
 
@@ -26,7 +26,11 @@ const LabSelector = () => {
         optionLabel="name"
         placeholder="Select a Country"
         className="country-dropdown"
-        onChange={(e) => selectCountry(e.target.value)}
+        onChange={(e) => {
+          selectCountry(e.target.value);
+          onChangeAllowDuplicates(e.target.value.allowDuplicates);
+          onSelectLab();
+        }}
         disabled={isLoadingCountries}
       />
       <Dropdown
@@ -35,7 +39,10 @@ const LabSelector = () => {
         optionLabel="name"
         placeholder="Select a Laboratory"
         className="lab-dropdown"
-        onChange={(e) => selectLab(e.target.value)}
+        onChange={(e) => {
+          selectLab(e.target.value);
+          onSelectLab(e.target.value);
+        }}
         disabled={isLoadingCountries || isLoadingLabs}
       />
       {(isLoadingCountries || isLoadingLabs) && (
@@ -43,6 +50,11 @@ const LabSelector = () => {
       )}
     </div>
   );
+};
+
+type Props = {
+  onSelectLab(lab?: Lab): void;
+  onChangeAllowDuplicates(allow: boolean): void;
 };
 
 export { LabSelector };

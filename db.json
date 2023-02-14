@@ -2,17 +2,24 @@
   "country": [
     {
       "id": "FR",
-      "name": "France"
+      "name": "France",
+      "allowDuplicates": false
     },
     {
       "id": "SW",
-      "name": "Sweden"
+      "name": "Sweden",
+      "allowDuplicates": true
     }
   ],
   "lab": [
     {
       "id": "0658b46a-abe2-11ed-afa1-0242ac12",
       "name": "Lorem lab",
+      "countryId": "FR"
+    },
+    {
+      "id": "0658b46a-abe2-11ed-afa1-0242ac11",
+      "name": "Adipiscing elit",
       "countryId": "FR"
     },
     {

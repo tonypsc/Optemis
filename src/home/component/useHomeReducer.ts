@@ -8,7 +8,10 @@ const reducer = (
   {
     type,
     payload,
-  }: { type: 'setCurrentLab' | 'setAllowDuplicates'; payload: Lab | boolean }
+  }: {
+    type: 'setCurrentLab' | 'setAllowDuplicates';
+    payload: Lab | boolean | undefined;
+  }
 ) => {
   switch (type) {
     case 'setCurrentLab':
@@ -26,7 +29,7 @@ const useHomeReducer = () => {
     initialState
   );
 
-  const setCurrentLab = (lab: Lab) =>
+  const setCurrentLab = (lab?: Lab) =>
     dispatch({ type: 'setCurrentLab', payload: lab });
 
   const setAllowDuplicates = (allowDuplicates: boolean) =>
