@@ -12,11 +12,13 @@
   "lab": [
     {
       "id": "0658b46a-abe2-11ed-afa1-0242ac12",
-      "name": "Lorem lab"
+      "name": "Lorem lab",
+      "countryId": "FR"
     },
     {
       "id": "0658b46a-abe2-11ed-afa1-0242ac13",
-      "name": "Ipsum lab"
+      "name": "Ipsum lab",
+      "countryId": "SW"
     }
   ],
   "stain": [
