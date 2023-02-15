@@ -14,25 +14,33 @@
   "lab": [
     {
       "id": "0658b46a-abe2-11ed-afa1-0242ac12",
-      "name": "Lorem lab",
-      "countryId": "FR"
+      "name": "First France lab",
+      "countryId": "FR",
+      "partOf": "parent-organization"
     },
     {
       "id": "0658b46a-abe2-11ed-afa1-0242ac11",
-      "name": "Adipiscing elit",
-      "countryId": "FR"
+      "name": "Standard France lab",
+      "countryId": "FR",
+      "partOf": "parent-organization"
     },
     {
       "id": "0658b46a-abe2-11ed-afa1-0242ac13",
-      "name": "Ipsum lab",
-      "countryId": "SW"
+      "name": "First Sweden lab",
+      "countryId": "SW",
+      "partOf": "parent-organization"
     }
   ],
   "stain": [
     {
-      "labId": "adfafafadsf",
-      "description": "json server",
-      "id": 1
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "description": "Green",
+      "id": "0658b46a-abe2-11ed-ede1-0242aced"
+    },
+    {
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "description": "Blue",
+      "id": "0658b46a-abe2-11ed-ada1-0242ac22"
     }
   ],
   "group": [

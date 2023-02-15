@@ -1,11 +1,17 @@
 .banner {
   background-color: #026eb5 ;
-  height: 100px;
+  min-height: 100px;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   padding: 1rem;
 }
 
 .title {
   color: #fff;
+  margin-bottom: 2px;
+}
+
+.comment {
+  color: #8DCBE6;
+  font-size: 0.65rem;
 }

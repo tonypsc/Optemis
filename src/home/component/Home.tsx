@@ -5,6 +5,7 @@ import { LabSelector } from '../../lab';
 import { Head } from '../../shared';
 import { Lab, Country } from '../../context/optemis';
 import { LoadingView, ErrorView } from '../../shared';
+import { StainContainer } from '../../stain';
 
 import { useHomeReducer } from './useHomeReducer';
 import { useCountries } from '../hook/useCountries';
@@ -50,9 +51,7 @@ const Home = () => {
             <p className="m-0">{selectedLab.name}</p>
           </TabPanel>
           <TabPanel header="Stains">
-            <p className="m-0">
-              {selectedCountry?.allowDuplicates ? 'si' : 'no'}
-            </p>
+            <StainContainer labId={selectedLab.id} />
           </TabPanel>
         </TabView>
       ) : (

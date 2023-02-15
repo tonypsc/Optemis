@@ -6,10 +6,10 @@
 .country-dropdown {
   width: 250px;
   margin-top: 10px;
+  margin-right: 10px;
 }
 
 .lab-dropdown {
-  width: 350px;
+  min-width: 250px;  
   margin-top: 10px;
-  margin-left: 10px;
 }
