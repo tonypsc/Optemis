@@ -1,5 +1,5 @@
 export interface Resource {
-  id: string;
+  id?: string;
 }
 
 export interface Country extends Resource {
@@ -9,21 +9,21 @@ export interface Country extends Resource {
 }
 
 export interface Lab extends Resource {
-  id: string;
+  id?: string;
   name: string;
   countryId: string;
 }
 
 export interface Stain extends Resource {
-  stainId: string;
+  id?: string;
   labId: string;
   description: string;
 }
 
 export interface StainGroup extends Resource {
-  id: string;
+  id?: string;
   labId: string;
   description: string;
   stains: Stain[];
-  inactive: boolean;
+  inactive?: boolean;
 }

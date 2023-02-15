@@ -1,0 +1,8 @@
+.stain-container {
+  display: flex;
+}
+
+.stain-list {
+  flex: 1;
+}
+

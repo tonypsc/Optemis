@@ -1,0 +1,8 @@
+.notification-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-title {
+  font-weight: bold;
+}

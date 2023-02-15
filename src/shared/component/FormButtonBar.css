@@ -1,0 +1,12 @@
+.form-button-bar-container {
+  margin-top: 2rem;
+  border-top: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.form-button-bar-button {
+  min-width: fit-content;
+}

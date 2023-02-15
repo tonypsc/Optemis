@@ -34,13 +34,18 @@
   "stain": [
     {
       "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
-      "description": "Green",
+      "description": "Crystal violet",
       "id": "0658b46a-abe2-11ed-ede1-0242aced"
     },
     {
       "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
-      "description": "Blue",
+      "description": "Basic fuchsin",
       "id": "0658b46a-abe2-11ed-ada1-0242ac22"
+    },
+    {
+      "description": "Malachite green",
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "id": "FI2SFXA"
     }
   ],
   "group": [

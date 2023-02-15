@@ -1,0 +1,8 @@
+.stain-item-container {
+  padding: 15px 0;
+  border-bottom: solid 1px #ECECEC;
+}
+
+.stain-item-container:hover {
+  background-color: #ECECEC ;
+}

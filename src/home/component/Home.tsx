@@ -51,7 +51,7 @@ const Home = () => {
             <p className="m-0">{selectedLab.name}</p>
           </TabPanel>
           <TabPanel header="Stains">
-            <StainContainer labId={selectedLab.id} />
+            <StainContainer labId={selectedLab.id!} />
           </TabPanel>
         </TabView>
       ) : (
