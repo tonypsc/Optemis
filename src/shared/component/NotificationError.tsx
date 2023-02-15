@@ -1,4 +1,4 @@
-import './Notification.css';
+import './Notifications.css';
 
 const NotificationError = ({ error: { message, cause } }: Props) => (
   <div className="notification-container">

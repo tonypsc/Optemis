@@ -3,7 +3,7 @@ import { Head } from './component/Head';
 import { ErrorView } from './component/ErrorView';
 import { InputField } from './component/InputField';
 import { FormButtonBar } from './component/FormButtonBar';
-import { displayNotificationError } from './component/DisplayNotificationError';
+import { displayNotificationError, displayNotificationSuccess } from './utils';
 
 export {
   LoadingView,
@@ -12,4 +12,5 @@ export {
   InputField,
   FormButtonBar,
   displayNotificationError,
+  displayNotificationSuccess,
 };

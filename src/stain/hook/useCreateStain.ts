@@ -1,8 +1,12 @@
 import { useMutation } from 'react-query';
+import { toast } from 'react-toastify';
 
 import { create } from '../../api/client';
 import { Stain } from '../../context/optemis';
-import { displayNotificationError } from '../../shared';
+import {
+  displayNotificationError,
+  displayNotificationSuccess,
+} from '../../shared';
 
 const useCreateStain = (hideForm: () => void, reloadStainData?: () => void) => {
   const createFn = async (stain: Stain) => create<Stain>('stain', stain);
@@ -11,8 +15,8 @@ const useCreateStain = (hideForm: () => void, reloadStainData?: () => void) => {
     onError: (error: Error, context) => {
       displayNotificationError(error);
     },
-    onSuccess: (patient) => {
-      //displayNotificationSuccess('Stain created successfully!');
+    onSuccess: () => {
+      displayNotificationSuccess('Stain created successfully!');
       reloadStainData?.();
     },
     onSettled: hideForm,

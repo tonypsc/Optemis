@@ -33,7 +33,7 @@ const StainContainer = ({ labId }: Props) => {
       <div className="stain-container">
         <div className="stain-list">
           {stains?.map((stain) => (
-            <StainListItem stain={stain} />
+            <StainListItem key={stain.id!} stain={stain} />
           ))}
         </div>
         {showForm && (
