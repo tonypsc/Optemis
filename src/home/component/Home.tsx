@@ -55,7 +55,7 @@ const Home = () => {
           </TabPanel>
         </TabView>
       ) : (
-        <div className="p-10">Please select a lab to continue</div>
+        <div className="p-10 text-muted">Please select a lab to continue</div>
       )}
     </div>
   );

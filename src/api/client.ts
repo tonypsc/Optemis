@@ -15,8 +15,6 @@ const client = async (
     signal,
   };
 
-  console.log(`${apiUrl}/${endpoint}`);
-
   const response = await fetch(`${apiUrl}/${endpoint}`, options);
   const data = await response.json();
 

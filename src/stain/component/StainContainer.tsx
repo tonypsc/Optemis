@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { Stain } from '../../context/optemis';
+import { ErrorMessage, ListSkeleton, NoRecord } from '../../shared';
 
 import { useStains } from '../hook/useStains';
 import { useCreateStain } from '../hook/useCreateStain';
@@ -22,6 +23,9 @@ const StainContainer = ({ labId }: Props) => {
     createStain(stain);
   };
 
+  if (isLoading) return <ListSkeleton />;
+  if (isError) return <ErrorMessage message={error?.message!} />;
+
   return (
     <div>
       <Button
@@ -31,11 +35,15 @@ const StainContainer = ({ labId }: Props) => {
         disabled={showForm || isLoading}
       />
       <div className="stain-container">
-        <div className="stain-list">
-          {stains?.map((stain) => (
-            <StainListItem key={stain.id!} stain={stain} />
-          ))}
-        </div>
+        {!stains || stains.length === 0 ? (
+          <NoRecord resource="stains" />
+        ) : (
+          <div className="stain-list">
+            {stains?.map((stain) => (
+              <StainListItem key={stain.id!} stain={stain} />
+            ))}
+          </div>
+        )}
         {showForm && (
           <div className="right-panel">
             <div className="right-panel-title">
