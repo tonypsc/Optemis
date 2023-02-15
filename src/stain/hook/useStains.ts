@@ -8,7 +8,9 @@ const useStains = (labId: string) => {
   const { data, isLoading, isError, error, refetch } = useQuery(
     queryKey,
     async () => {
-      const stains = await read(`stain?labId=${labId}`);
+      const stains = await read(
+        `stain?labId=${labId}&_sort=createdAt&_order=desc`
+      );
       return stains as Stain[];
     },
     { onError: (error: Error) => {} }

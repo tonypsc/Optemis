@@ -18,6 +18,7 @@ export interface Stain extends Resource {
   id?: string;
   labId: string;
   description: string;
+  createdAt?: number;
 }
 
 export interface StainGroup extends Resource {
@@ -26,4 +27,5 @@ export interface StainGroup extends Resource {
   description: string;
   stains: Stain[];
   inactive?: boolean;
+  createdAt?: number;
 }

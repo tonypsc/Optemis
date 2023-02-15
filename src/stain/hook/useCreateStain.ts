@@ -8,7 +8,10 @@ import {
 } from '../../shared';
 
 const useCreateStain = (hideForm: () => void, reloadStainData?: () => void) => {
-  const createFn = async (stain: Stain) => create<Stain>('stain', stain);
+  const createFn = async (stain: Stain) => {
+    stain.createdAt = new Date().getTime();
+    create<Stain>('stain', stain);
+  };
 
   const { mutate: createStain, isLoading } = useMutation(createFn, {
     onError: (error: Error, context) => {
