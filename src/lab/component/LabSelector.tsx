@@ -5,17 +5,17 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { Country, Lab } from '../../context/optemis';
 
-import { useCountries } from '../hook/useCountries';
-import { useLabs } from '../hook/useLabs';
-
 import './LabSelector.css';
 
-const LabSelector = ({ onSelectLab, onChangeAllowDuplicates }: Props) => {
+const LabSelector = ({
+  countries,
+  labs,
+  onSelectLab,
+  onSelectCountry,
+  isLoading,
+}: Props) => {
   const [country, selectCountry] = useState<Country>();
   const [lab, selectLab] = useState<Lab>();
-
-  const { countries, isLoading: isLoadingCountries } = useCountries();
-  const { labs, isLoading: isLoadingLabs } = useLabs(country?.id);
 
   return (
     <div className="lab-container">
@@ -28,10 +28,10 @@ const LabSelector = ({ onSelectLab, onChangeAllowDuplicates }: Props) => {
         className="country-dropdown"
         onChange={(e) => {
           selectCountry(e.target.value);
-          onChangeAllowDuplicates(e.target.value.allowDuplicates);
+          onSelectCountry(e.target.value);
           onSelectLab();
         }}
-        disabled={isLoadingCountries}
+        disabled={isLoading}
       />
       <Dropdown
         value={lab}
@@ -43,9 +43,9 @@ const LabSelector = ({ onSelectLab, onChangeAllowDuplicates }: Props) => {
           selectLab(e.target.value);
           onSelectLab(e.target.value);
         }}
-        disabled={isLoadingCountries || isLoadingLabs}
+        disabled={isLoading}
       />
-      {(isLoadingCountries || isLoadingLabs) && (
+      {isLoading && (
         <FontAwesomeIcon icon={faSpinner} size="1x" spin className="ml-10" />
       )}
     </div>
@@ -53,8 +53,11 @@ const LabSelector = ({ onSelectLab, onChangeAllowDuplicates }: Props) => {
 };
 
 type Props = {
+  countries: Country[];
+  labs: Lab[];
   onSelectLab(lab?: Lab): void;
-  onChangeAllowDuplicates(allow: boolean): void;
+  onSelectCountry(country: Country): void;
+  isLoading: boolean;
 };
 
 export { LabSelector };

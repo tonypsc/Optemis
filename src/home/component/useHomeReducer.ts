@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { Lab } from '../../context/optemis';
+import { Lab, Country } from '../../context/optemis';
 
 const initialState: HomeState = {};
 
@@ -9,22 +9,22 @@ const reducer = (
     type,
     payload,
   }: {
-    type: 'setCurrentLab' | 'setAllowDuplicates';
-    payload: Lab | boolean | undefined;
+    type: 'setCurrentLab' | 'setCurrentCountry';
+    payload: Lab | Country | undefined;
   }
 ) => {
   switch (type) {
     case 'setCurrentLab':
       return { ...state, selectedLab: payload as Lab };
-    case 'setAllowDuplicates':
-      return { ...state, allowDuplicates: payload as boolean };
+    case 'setCurrentCountry':
+      return { ...state, selectedCountry: payload as Country };
     default:
       return state;
   }
 };
 
 const useHomeReducer = () => {
-  const [{ selectedLab, allowDuplicates }, dispatch] = useReducer(
+  const [{ selectedLab, selectedCountry }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -32,15 +32,15 @@ const useHomeReducer = () => {
   const setCurrentLab = (lab?: Lab) =>
     dispatch({ type: 'setCurrentLab', payload: lab });
 
-  const setAllowDuplicates = (allowDuplicates: boolean) =>
-    dispatch({ type: 'setAllowDuplicates', payload: allowDuplicates });
+  const setCurrentCountry = (country?: Country) =>
+    dispatch({ type: 'setCurrentCountry', payload: country });
 
-  return { selectedLab, allowDuplicates, setCurrentLab, setAllowDuplicates };
+  return { selectedLab, selectedCountry, setCurrentLab, setCurrentCountry };
 };
 
 type HomeState = {
   selectedLab?: Lab;
-  allowDuplicates?: boolean;
+  selectedCountry?: Country;
 };
 
 export { useHomeReducer };

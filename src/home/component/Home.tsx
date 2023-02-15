@@ -3,32 +3,46 @@ import { TabPanel } from 'primereact/tabview';
 
 import { LabSelector } from '../../lab';
 import { Head } from '../../shared';
-import { Lab } from '../../context/optemis';
+import { Lab, Country } from '../../context/optemis';
+import { LoadingView, ErrorView } from '../../shared';
 
 import { useHomeReducer } from './useHomeReducer';
+import { useCountries } from '../hook/useCountries';
+import { useLabs } from '../hook/useLabs';
 
 import './Home.css';
 
 const Home = () => {
-  const { selectedLab, allowDuplicates, setCurrentLab, setAllowDuplicates } =
+  const { selectedLab, selectedCountry, setCurrentLab, setCurrentCountry } =
     useHomeReducer();
-
-  console.log(selectedLab);
+  const {
+    countries,
+    isLoading: isLoadingCountries,
+    isError,
+    error,
+  } = useCountries();
+  const { labs, isLoading: isLoadingLabs } = useLabs(selectedCountry?.id);
 
   const handleSelectLab = (lab?: Lab) => {
     setCurrentLab(lab);
   };
 
-  const handleChangeAllowDuplicates = (allow: boolean) => {
-    setAllowDuplicates(allow);
+  const handleSelectCountry = (country: Country) => {
+    setCurrentCountry(country);
   };
+
+  if (isLoadingCountries) return <LoadingView />;
+  if (isError) return <ErrorView error={error!} />;
 
   return (
     <div className="container">
       <Head />
       <LabSelector
+        countries={countries!}
+        labs={labs!}
         onSelectLab={handleSelectLab}
-        onChangeAllowDuplicates={handleChangeAllowDuplicates}
+        onSelectCountry={handleSelectCountry}
+        isLoading={isLoadingCountries || isLoadingLabs}
       />
       {selectedLab ? (
         <TabView>
@@ -36,7 +50,9 @@ const Home = () => {
             <p className="m-0">{selectedLab.name}</p>
           </TabPanel>
           <TabPanel header="Stains">
-            <p className="m-0">{allowDuplicates ? 'si' : 'no'}</p>
+            <p className="m-0">
+              {selectedCountry?.allowDuplicates ? 'si' : 'no'}
+            </p>
           </TabPanel>
         </TabView>
       ) : (

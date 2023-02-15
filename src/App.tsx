@@ -4,9 +4,10 @@ import 'primeicons/primeicons.css';
 
 import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ErrorBoundary } from 'react-error-boundary';
 
 import { Home } from './home';
-import { LoadingView } from './shared';
+import { LoadingView, ErrorView } from './shared';
 
 import './App.css';
 
@@ -15,9 +16,11 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Suspense fallback={<LoadingView />}>
-        <Home />
-      </Suspense>
+      <ErrorBoundary FallbackComponent={ErrorView}>
+        <Suspense fallback={<LoadingView />}>
+          <Home />
+        </Suspense>
+      </ErrorBoundary>
     </QueryClientProvider>
   );
 }

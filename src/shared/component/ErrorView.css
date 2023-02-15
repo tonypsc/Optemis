@@ -1,0 +1,11 @@
+.error-center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container {
+  text-align: center;
+}
