@@ -1,4 +1,4 @@
-import { Form, Formik, FormikProps } from 'formik';
+import { Form, Formik } from 'formik';
 
 import { FormButtonBar } from '../../shared';
 import { Stain } from '../../context/optemis';

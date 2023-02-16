@@ -7,6 +7,7 @@ import { displayNotificationError, displayNotificationSuccess } from './utils';
 import { ListSkeleton } from './component/ListSkeleton';
 import { ErrorMessage } from './component/ErrorMessage';
 import { NoRecord } from './component/NoRecords';
+import { SwitchField } from './component/SwitchField';
 
 export {
   LoadingView,
@@ -19,4 +20,5 @@ export {
   ListSkeleton,
   ErrorMessage,
   NoRecord,
+  SwitchField,
 };

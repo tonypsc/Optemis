@@ -1,0 +1,11 @@
+.form-stain-container {
+
+}
+
+.form-stain-container-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  border-bottom: 1px solid #c9c9c9;
+  margin-top: 1rem;
+}

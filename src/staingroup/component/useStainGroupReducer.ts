@@ -34,6 +34,7 @@ const reducer = (
         isNew: true,
         showForm: true,
         panelTitle: 'New group',
+        selectedStainGroup: undefined,
       };
     case 'setShowPanel':
       return { ...state, showPanel: payload as boolean };

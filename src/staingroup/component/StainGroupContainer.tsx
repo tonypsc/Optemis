@@ -2,7 +2,7 @@ import { Button } from 'primereact/button';
 import { useWindowSize } from 'react-use';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { classNames } from 'primereact/utils';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faPencil } from '@fortawesome/free-solid-svg-icons';
 
 import { ErrorMessage, ListSkeleton, NoRecord } from '../../shared';
 
@@ -10,6 +10,7 @@ import { useStainGroups } from '../hook/useStainGroups';
 import { StainGroupListItem } from './StainGroupListItem';
 import { useStainGroupReducer } from './useStainGroupReducer';
 import { StainGroupDetail } from './StainGroupDetail';
+import { StainGroupFormContainer } from './StainGroupFormContainer';
 
 import './StainGroupContainer.css';
 
@@ -34,13 +35,20 @@ const StainGroupContainer = ({ labId }: Props) => {
   if (isLoading) return <ListSkeleton />;
   if (isError) return <ErrorMessage message={error?.message!} />;
 
+  const defaultGroupValues = {
+    description: '',
+    stains: [],
+    inactive: false,
+    labId,
+  };
+
   return (
     <>
       <Button
         label="New stain"
         className="mb-10"
         onClick={add}
-        disabled={isLoading}
+        disabled={isLoading || isNew}
       />
       <div className="staingroup-container">
         {(width > 600 || !showPanel) && (
@@ -70,13 +78,24 @@ const StainGroupContainer = ({ labId }: Props) => {
           >
             <div className="right-panel-title mb-15">
               <span>{panelTitle}</span>
-              <Button className="p-button-text p-button-sm" onClick={reset}>
-                <FontAwesomeIcon icon={faTimes} title="Close panel" />
-              </Button>
+              <div>
+                {!showForm && (
+                  <Button className="p-button-text p-button-sm" onClick={edit}>
+                    <FontAwesomeIcon icon={faPencil} title="Edit group" />
+                  </Button>
+                )}
+                <Button className="p-button-text p-button-sm" onClick={reset}>
+                  <FontAwesomeIcon icon={faTimes} title="Close panel" />
+                </Button>
+              </div>
             </div>
             <div className="right-panel-container">
               {showForm ? (
-                <>Form</>
+                <StainGroupFormContainer
+                  initialValues={selectedStainGroup ?? defaultGroupValues}
+                  onSubmit={() => {}}
+                  onCancel={reset}
+                />
               ) : (
                 <StainGroupDetail stainGroup={selectedStainGroup!} />
               )}

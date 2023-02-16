@@ -2,8 +2,6 @@ import { Field, FieldProps, ErrorMessage } from 'formik';
 import { classNames } from 'primereact/utils';
 import { InputText } from 'primereact/inputtext';
 
-import './InputField.css';
-
 const InputField = ({
   field,
   label,

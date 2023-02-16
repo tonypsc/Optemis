@@ -40,6 +40,23 @@
   align-items: center;
 }
 
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field-error {
+  display: flex;
+  align-items: start;
+  margin-top: 1;
+}
+
+.items-center {
+  align-items: center;
+}
+
 .p-0 {
   padding: 0px;
 }
