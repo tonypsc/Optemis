@@ -63,31 +63,42 @@
       "createdAt": 1676502575261
     }
   ],
-  "group": [
+  "staingroup": [
     {
-      "labId": "adfafafadsf",
-      "description": "json server",
-      "stains": "[{\"id\": \"algo}, {\"id\": \"otra cosa\"}]",
-      "id": 1
-    },
-    {
-      "labId": "adfafafadsf",
-      "description": "json server",
-      "stains": "[{\"id\": \"algo}, {\"id\": \"otra cosa\"}]",
-      "id": 2
-    },
-    {
-      "labId": "adfafafadsf",
-      "description": "json server",
+      "description": "Acid desease diagnose",
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "id": "7wnsYg2",
+      "createdAt": 1676502575261,
+      "inactive": true,
       "stains": [
         {
-          "id": "algo"
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "rWYxnkn",
+          "createdAt": 1676502575260
         },
         {
-          "id": "otra cosa"
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "7wnsYgZ",
+          "createdAt": 1676502575261
         }
-      ],
-      "id": 3
+      ]
+    },
+    {
+      "description": "Most used",
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "id": "7wnsYg1",
+      "createdAt": 1676502575262,
+      "inactive": false,
+      "stains": [
+        {
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "rWYxnkn",
+          "createdAt": 1676502575260
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,7 @@
+.staingroup-container {
+  display: flex;
+}
+
+.staingroup-list {
+  flex: 1;
+}

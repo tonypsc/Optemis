@@ -6,6 +6,7 @@ import { Head } from '../../shared';
 import { Lab, Country } from '../../context/optemis';
 import { LoadingView, ErrorView } from '../../shared';
 import { StainContainer } from '../../stain';
+import { StainGroupContainer } from '../../staingroup';
 
 import { useHomeReducer } from './useHomeReducer';
 import { useCountries } from '../hook/useCountries';
@@ -48,7 +49,7 @@ const Home = () => {
       {selectedLab ? (
         <TabView>
           <TabPanel header="Groups">
-            <p className="m-0">{selectedLab.name}</p>
+            <StainGroupContainer labId={selectedLab.id!} />
           </TabPanel>
           <TabPanel header="Stains">
             <StainContainer labId={selectedLab.id!} />
