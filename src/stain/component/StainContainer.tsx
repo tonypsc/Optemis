@@ -30,7 +30,7 @@ const StainContainer = ({ labId }: Props) => {
   if (isError) return <ErrorMessage message={error?.message!} />;
 
   return (
-    <div>
+    <>
       <Button
         label="New stain"
         className="mb-10"
@@ -63,15 +63,17 @@ const StainContainer = ({ labId }: Props) => {
                 <FontAwesomeIcon icon={faTimes} title="Close panel" />
               </Button>
             </div>
-            <StainFormContainer
-              onSubmit={handleSubmit}
-              onCancel={hideForm}
-              initialValues={{ description: '', labId }}
-            />
+            <div className="right-panel-container">
+              <StainFormContainer
+                onSubmit={handleSubmit}
+                onCancel={hideForm}
+                initialValues={{ description: '', labId }}
+              />
+            </div>
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

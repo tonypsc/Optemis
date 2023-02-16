@@ -1,0 +1,29 @@
+.detail-field {
+  font-size: medium;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.detail-field label {
+  width: 100%;
+  font-size: .9rem;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.detail-chip {
+  border-radius: 0.75rem;
+  color: #FFFFFF;
+  font-size: small;
+  font-weight: bold;
+  width: fit-content;
+  padding: 0.2rem 0.4rem;
+}
+
+.detail-inactive-chip {
+  background-color: #F55050;
+}
+
+.detail-active-chip {
+  background-color: #3CCF4E;
+}

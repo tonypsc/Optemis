@@ -1,7 +1,10 @@
 .staingroup-container {
   display: flex;
+  height: 100%;
 }
 
 .staingroup-list {
   flex: 1;
+  margin-bottom: 6rem;
+  overflow-y: auto;
 }

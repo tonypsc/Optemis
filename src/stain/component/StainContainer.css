@@ -1,9 +1,12 @@
 .stain-container {
   display: flex;
+  height: 100%;
 }
 
 .stain-list {
   flex: 1;
+  overflow-y: auto;
+  margin-bottom: 6rem;
 }
 
 

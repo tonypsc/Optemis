@@ -1,9 +1,13 @@
 .staingroup-item-container {
-  padding: 15px 0;
+  padding: 1rem 0.5rem;
   border-bottom: solid 1px #ECECEC;
 }
 
 .staingroup-item-container:hover {
   background-color: #ECECEC ;
   cursor: pointer;
+}
+
+.staingroup-item-selected {
+  background-color: #ECF2FF;
 }

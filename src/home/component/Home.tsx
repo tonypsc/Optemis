@@ -1,5 +1,6 @@
 import { TabView } from 'primereact/tabview';
 import { TabPanel } from 'primereact/tabview';
+import { TabMenu } from 'primereact/tabmenu';
 
 import { LabSelector } from '../../lab';
 import { Head } from '../../shared';
@@ -15,8 +16,14 @@ import { useLabs } from '../hook/useLabs';
 import './Home.css';
 
 const Home = () => {
-  const { selectedLab, selectedCountry, setCurrentLab, setCurrentCountry } =
-    useHomeReducer();
+  const {
+    selectedLab,
+    selectedCountry,
+    currentView,
+    setCurrentLab,
+    setCurrentCountry,
+    setCurrentView,
+  } = useHomeReducer();
   const {
     countries,
     isLoading: isLoadingCountries,
@@ -46,18 +53,26 @@ const Home = () => {
         onSelectCountry={handleSelectCountry}
         isLoading={isLoadingCountries || isLoadingLabs}
       />
-      {selectedLab ? (
-        <TabView>
-          <TabPanel header="Groups">
-            <StainGroupContainer labId={selectedLab.id!} />
-          </TabPanel>
-          <TabPanel header="Stains">
-            <StainContainer labId={selectedLab.id!} />
-          </TabPanel>
-        </TabView>
-      ) : (
-        <div className="p-10 text-muted">Please select a lab to continue</div>
-      )}
+      <div className="container-main-area">
+        {selectedLab ? (
+          <>
+            <TabMenu
+              model={[{ label: 'Groups' }, { label: 'Stains' }]}
+              activeIndex={currentView}
+              onTabChange={(e) => setCurrentView(e.index)}
+            />
+            <div className="pt-20 h-100">
+              {currentView === 0 ? (
+                <StainGroupContainer labId={selectedLab.id!} />
+              ) : (
+                <StainContainer labId={selectedLab.id!} />
+              )}
+            </div>
+          </>
+        ) : (
+          <div className="p-10 text-muted">Please select a lab to continue</div>
+        )}
+      </div>
     </div>
   );
 };

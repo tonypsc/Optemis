@@ -1,6 +1,6 @@
 .banner {
   background-color: #026eb5 ;
-  min-height: 100px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -14,4 +14,10 @@
 .comment {
   color: #8DCBE6;
   font-size: 0.65rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    height: 135px;
+  }
 }

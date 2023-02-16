@@ -5,6 +5,7 @@ const initialState: StainGroupState = {
   showPanel: true,
   isNew: false,
   showForm: false,
+  panelTitle: 'Group detail',
 };
 
 const reducer = (
@@ -19,9 +20,21 @@ const reducer = (
 ) => {
   switch (type) {
     case 'edit':
-      return { ...state, showPanel: true, isNew: false, showForm: true };
+      return {
+        ...state,
+        showPanel: true,
+        isNew: false,
+        showForm: true,
+        panelTitle: 'Editing group',
+      };
     case 'add':
-      return { ...state, showPanel: true, isNew: true, showForm: true };
+      return {
+        ...state,
+        showPanel: true,
+        isNew: true,
+        showForm: true,
+        panelTitle: 'New group',
+      };
     case 'setShowPanel':
       return { ...state, showPanel: payload as boolean };
     case 'reset':
@@ -29,13 +42,16 @@ const reducer = (
         ...state,
         showPanel: false,
         isNew: false,
+        panelTitle: 'Group details',
         selectedStainGroup: undefined,
       };
     case 'selectGroup':
       return {
         ...state,
-        showPanel: false,
+        showPanel: true,
+        showForm: false,
         isNew: false,
+        panelTitle: 'Group details',
         selectedStainGroup: payload as StainGroup,
       };
     default:
@@ -44,8 +60,10 @@ const reducer = (
 };
 
 const useStainGroupReducer = () => {
-  const [{ selectedStainGroup, showPanel, isNew, showForm }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { selectedStainGroup, showPanel, isNew, showForm, panelTitle },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   const setCurrentGroup = (group?: StainGroup) =>
     dispatch({ type: 'selectGroup', payload: group });
@@ -65,6 +83,7 @@ const useStainGroupReducer = () => {
     reset,
     isNew,
     showForm,
+    panelTitle,
     openPanel,
     closePanel,
   };
@@ -75,6 +94,7 @@ type StainGroupState = {
   showPanel: boolean;
   isNew: boolean;
   showForm: boolean;
+  panelTitle: string;
 };
 
 export { useStainGroupReducer };
