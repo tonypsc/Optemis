@@ -1,7 +1,8 @@
 .right-panel {
+  width: 30%;
+  min-width: 300px;
   border-left: 1px solid #ECECEC;
   padding: 0 1rem;
-  width: 30%;
   min-height: 40vh;
 }
 
@@ -523,3 +524,12 @@
 .text-sm {
   font-size: small;
 }
+
+.display-none {
+  display: none;
+}
+
+.border-none {
+  border: none;
+}
+
