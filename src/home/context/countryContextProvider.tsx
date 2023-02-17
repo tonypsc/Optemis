@@ -11,14 +11,10 @@ const CountryContextProvider = ({
   country,
   children,
 }: PropsWithChildren<Props>) => {
-  if (!country?.id) {
-    throw new Error('Invalid country id');
-  }
-
   return (
     <CountryContext.Provider
       value={{
-        countryId: country.id,
+        countryId: country?.id,
         country,
         refreshData,
       }}

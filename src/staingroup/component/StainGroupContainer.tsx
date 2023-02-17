@@ -61,7 +61,7 @@ const StainGroupContainer = ({ labId }: Props) => {
   return (
     <>
       <Button
-        label="New stain"
+        label="New stain group"
         className="mb-10"
         onClick={add}
         disabled={isLoading || isNew}

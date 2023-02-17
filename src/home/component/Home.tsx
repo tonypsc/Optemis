@@ -10,6 +10,7 @@ import { StainGroupContainer } from '../../staingroup';
 import { useHomeReducer } from '../hook/useHomeReducer';
 import { useCountries } from '../hook/useCountries';
 import { useLabs } from '../hook/useLabs';
+import { CountryContextProvider } from '../context/countryContextProvider';
 
 import './Home.css';
 
@@ -27,6 +28,7 @@ const Home = () => {
     isLoading: isLoadingCountries,
     isError,
     error,
+    refetch: reloadCountries,
   } = useCountries();
   const { labs, isLoading: isLoadingLabs } = useLabs(selectedCountry?.id);
 
@@ -51,26 +53,33 @@ const Home = () => {
         onSelectCountry={handleSelectCountry}
         isLoading={isLoadingCountries || isLoadingLabs}
       />
-      <div className="container-main-area">
-        {selectedLab ? (
-          <>
-            <TabMenu
-              model={[{ label: 'Groups' }, { label: 'Stains' }]}
-              activeIndex={currentView}
-              onTabChange={(e) => setCurrentView(e.index)}
-            />
-            <div className="pt-20 h-100">
-              {currentView === 0 ? (
-                <StainGroupContainer labId={selectedLab.id!} />
-              ) : (
-                <StainContainer labId={selectedLab.id!} />
-              )}
+      <CountryContextProvider
+        country={selectedCountry!}
+        refreshData={reloadCountries}
+      >
+        <div className="container-main-area">
+          {selectedLab ? (
+            <>
+              <TabMenu
+                model={[{ label: 'Groups' }, { label: 'Stains' }]}
+                activeIndex={currentView}
+                onTabChange={(e) => setCurrentView(e.index)}
+              />
+              <div className="pt-20 h-100">
+                {currentView === 0 ? (
+                  <StainGroupContainer labId={selectedLab.id!} />
+                ) : (
+                  <StainContainer labId={selectedLab.id!} />
+                )}
+              </div>
+            </>
+          ) : (
+            <div className="p-10 text-muted">
+              Please select a lab to continue
             </div>
-          </>
-        ) : (
-          <div className="p-10 text-muted">Please select a lab to continue</div>
-        )}
-      </div>
+          )}
+        </div>
+      </CountryContextProvider>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import { ListBox } from 'primereact/listbox';
 
 import { StainListItem, useStains } from '../../stain';
 import { Stain } from '../../context/optemis';
+import { useCountryContext } from '../../home';
 
 import './StainField.css';
 
@@ -17,6 +18,7 @@ const StainField = ({ labId }: Props) => {
   const [confirmDeleteItem, setConfirmDeleteItem] = useState(-1);
   const [showModal, setShowModal] = useState(false);
   const [selectedStains, setSelectedStains] = useState<string[]>([]);
+  const { country } = useCountryContext();
 
   return (
     <FieldArray name="stains">
@@ -26,6 +28,7 @@ const StainField = ({ labId }: Props) => {
         form: { values, errors, setErrors },
       }: FieldArrayRenderProps) => {
         const getAvailableStains = () => {
+          if (country.allowDuplicates) return stains;
           const usedStainList = values.stains.map((stain: Stain) => stain.id);
           return stains?.filter(({ id }) => !usedStainList.includes(id));
         };
