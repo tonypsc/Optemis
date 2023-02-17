@@ -1,5 +1,3 @@
-import { TabView } from 'primereact/tabview';
-import { TabPanel } from 'primereact/tabview';
 import { TabMenu } from 'primereact/tabmenu';
 
 import { LabSelector } from '../../lab';
@@ -9,7 +7,7 @@ import { LoadingView, ErrorView } from '../../shared';
 import { StainContainer } from '../../stain';
 import { StainGroupContainer } from '../../staingroup';
 
-import { useHomeReducer } from './useHomeReducer';
+import { useHomeReducer } from '../hook/useHomeReducer';
 import { useCountries } from '../hook/useCountries';
 import { useLabs } from '../hook/useLabs';
 

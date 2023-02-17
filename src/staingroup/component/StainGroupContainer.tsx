@@ -8,7 +8,7 @@ import { ErrorMessage, ListSkeleton, NoRecord } from '../../shared';
 
 import { useStainGroups } from '../hook/useStainGroups';
 import { StainGroupListItem } from './StainGroupListItem';
-import { useStainGroupReducer } from './useStainGroupReducer';
+import { useStainGroupReducer } from '../hook/useStainGroupReducer';
 import { StainGroupDetail } from './StainGroupDetail';
 import { StainGroupFormContainer } from './StainGroupFormContainer';
 

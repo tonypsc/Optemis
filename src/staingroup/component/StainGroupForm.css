@@ -1,11 +1,8 @@
-.form-stain-container {
-
-}
-
 .form-stain-container-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: small;
-  border-bottom: 1px solid #c9c9c9;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem 0 0;
 }

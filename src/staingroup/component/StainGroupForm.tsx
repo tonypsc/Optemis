@@ -24,6 +24,7 @@ const StainGroupForm = () => {
       <div className="form-stain-container-header">
         <span>Stain list</span>
         <Button
+          type="button"
           label="Add stain"
           className="p-button-text p-button-sm"
           icon={<FontAwesomeIcon icon={faPlus} className="pr-3" />}
