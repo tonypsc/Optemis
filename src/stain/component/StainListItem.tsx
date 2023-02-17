@@ -11,7 +11,7 @@ const StainListItem = ({ stain, external, allowDelete, onDelete }: Props) => (
   <div
     className={classNames('stain-item-container', {
       'text-sm': external,
-      'pb-15 pt-15': !allowDelete,
+      'stain-item-sm': allowDelete,
     })}
   >
     <div>
