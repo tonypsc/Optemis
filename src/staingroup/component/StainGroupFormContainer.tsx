@@ -16,10 +16,10 @@ const StainGroupFormContainer = ({
       onSubmit={onSubmit}
       enableReinitialize
     >
-      {({ isSubmitting }) => {
+      {({ isSubmitting, values }) => {
         return (
           <Form className="pb-30">
-            <StainGroupForm />
+            <StainGroupForm labId={values.labId} />
             <FormButtonBar onCancel={onCancel} loading={isSubmitting} />
           </Form>
         );

@@ -1,12 +1,8 @@
-import { Button } from 'primereact/button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-
 import { InputField, SwitchField } from '../../shared';
 
 import { StainField } from './StainField';
 
-const StainGroupForm = () => {
+const StainGroupForm = ({ labId }: Props) => {
   return (
     <fieldset className="custom-fieldset pl-3">
       <InputField
@@ -21,9 +17,13 @@ const StainGroupForm = () => {
         falseValue={false}
       />
 
-      <StainField />
+      <StainField labId={labId} />
     </fieldset>
   );
+};
+
+type Props = {
+  labId: string;
 };
 
 export { StainGroupForm };
