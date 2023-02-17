@@ -59,8 +59,12 @@ const StainContainer = ({ labId }: Props) => {
           >
             <div className="right-panel-title">
               <span>Stain details</span>
-              <Button className="p-button-text p-button-sm" onClick={hideForm}>
-                <FontAwesomeIcon icon={faTimes} title="Close panel" />
+              <Button
+                className="p-button-text p-button-sm"
+                onClick={hideForm}
+                title="Close panel"
+              >
+                <FontAwesomeIcon icon={faTimes} />
               </Button>
             </div>
             <div className="right-panel-container">

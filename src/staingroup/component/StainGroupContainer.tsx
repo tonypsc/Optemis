@@ -99,15 +99,15 @@ const StainGroupContainer = ({ labId }: Props) => {
                   <Button
                     className="p-button-text p-button-sm"
                     onClick={edit}
-                    icon={
-                      <FontAwesomeIcon icon={faPencil} title="Edit group" />
-                    }
+                    icon={<FontAwesomeIcon icon={faPencil} />}
+                    title="Edit group"
                   />
                 )}
                 <Button
                   className="p-button-text p-button-sm"
                   onClick={reset}
-                  icon={<FontAwesomeIcon icon={faTimes} title="Close panel" />}
+                  icon={<FontAwesomeIcon icon={faTimes} />}
+                  title="Close panel"
                 />
               </div>
             </div>

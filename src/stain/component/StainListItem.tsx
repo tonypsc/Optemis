@@ -25,6 +25,7 @@ const StainListItem = ({ stain, external, allowDelete, onDelete }: Props) => (
           icon={<FontAwesomeIcon icon={faTrash} className="mr-3" />}
           className="p-button-text p-button-icon p-button-sm p-button-rounded ring-0"
           onClick={() => onDelete(stain)}
+          title="Delete stain"
         />
       </div>
     )}
