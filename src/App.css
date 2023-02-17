@@ -57,6 +57,21 @@
   align-items: center;
 }
 
+.ring-0 {
+  border: none;
+  outline: none;
+}
+
+.ring-0 active {
+  border: none;
+  outline: none;
+}
+
+.ring-0 hover {
+  border: none;
+  outline: none;
+}
+
 .p-0 {
   padding: 0px;
 }

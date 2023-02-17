@@ -37,7 +37,7 @@ const InputField = ({
         />
 
         <ErrorMessage name={field}>
-          {(msg) => <small className="p-error">{msg}</small>}
+          {(msg) => <small className="p-error text-sm pt-5 pl-3">{msg}</small>}
         </ErrorMessage>
       </div>
     )}

@@ -26,7 +26,7 @@ const StainGroupDetail = ({ stainGroup }: Props) => (
       <label>Stains</label>
       {stainGroup.stains.length > 0 ? (
         stainGroup.stains.map((stain) => (
-          <StainListItem key={stain.id} stain={stain} />
+          <StainListItem key={stain.id} stain={stain} external />
         ))
       ) : (
         <>No stains includes in this group</>

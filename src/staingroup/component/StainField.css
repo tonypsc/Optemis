@@ -1,8 +1,13 @@
-.form-stain-container-header {
+.stainfield-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: small;
+  font-size: 0.85rem;
   margin-top: 0.5rem;
   padding: 0 0.5rem 0 0;
+}
+
+.stainfield-list {
+  max-height: 200px;
+  overflow-y: auto;
 }

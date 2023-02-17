@@ -4,7 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { InputField, SwitchField } from '../../shared';
 
-import './StainGroupForm.css';
+import { StainField } from './StainField';
 
 const StainGroupForm = () => {
   return (
@@ -21,16 +21,7 @@ const StainGroupForm = () => {
         falseValue={false}
       />
 
-      <div className="form-stain-container-header">
-        <span>Stain list</span>
-        <Button
-          type="button"
-          label="Add stain"
-          className="p-button-text p-button-sm"
-          icon={<FontAwesomeIcon icon={faPlus} className="pr-3" />}
-        />
-        {}
-      </div>
+      <StainField />
     </fieldset>
   );
 };
