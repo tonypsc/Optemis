@@ -5,6 +5,7 @@ import { classNames } from 'primereact/utils';
 import { faTimes, faPencil } from '@fortawesome/free-solid-svg-icons';
 
 import { ErrorMessage, ListSkeleton, NoRecord } from '../../shared';
+import { StainGroup } from '../../context/optemis';
 
 import { useStainGroups } from '../hook/useStainGroups';
 import { StainGroupListItem } from './StainGroupListItem';
@@ -39,6 +40,11 @@ const StainGroupContainer = ({ labId }: Props) => {
     stains: [],
     inactive: false,
     labId,
+  };
+
+  const handleSubmit = (stainGroup: StainGroup) => {
+    console.log(stainGroup);
+    closePanel();
   };
 
   return (
@@ -92,7 +98,7 @@ const StainGroupContainer = ({ labId }: Props) => {
               {showForm ? (
                 <StainGroupFormContainer
                   initialValues={selectedStainGroup ?? defaultGroupValues}
-                  onSubmit={() => {}}
+                  onSubmit={handleSubmit}
                   onCancel={reset}
                 />
               ) : (

@@ -21,7 +21,7 @@ const FormButtonBar = ({ onCancel, loading }: Props) => (
 
 type Props = {
   onCancel(): void;
-  loading: boolean;
+  loading?: boolean;
 };
 
 export { FormButtonBar };
