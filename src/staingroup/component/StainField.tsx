@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { FieldArray, FieldArrayRenderProps } from 'formik';
+import { useEffect, useState } from 'react';
+import { FieldArray, FieldArrayRenderProps, ErrorMessage } from 'formik';
 import { Button } from 'primereact/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -23,7 +23,7 @@ const StainField = ({ labId }: Props) => {
       {({
         push,
         remove,
-        form: { values, setFieldValue, validateForm, setFieldTouched },
+        form: { values, errors, setErrors },
       }: FieldArrayRenderProps) => {
         const getAvailableStains = () => {
           const usedStainList = values.stains.map((stain: Stain) => stain.id);
@@ -35,7 +35,14 @@ const StainField = ({ labId }: Props) => {
             push(stains?.find((stain) => stain.id === selectedId))
           );
           setShowModal(false);
+          setErrors({ ...errors, stains: undefined });
         };
+
+        if (!values.stains || values.stains.length === 0) {
+          errors.stains = 'Group must contain stains';
+        } else {
+          delete errors.stains;
+        }
 
         return (
           <>
@@ -73,13 +80,12 @@ const StainField = ({ labId }: Props) => {
             <ConfirmDialog
               visible={confirmDeleteItem !== -1}
               onHide={() => setConfirmDeleteItem(-1)}
-              message="Are you sure you want to delete the stain? "
+              message="Are you sure you want to delete the stain?"
               header="Confirmation"
               icon="pi pi-exclamation-triangle"
               accept={() => remove(confirmDeleteItem)}
               reject={() => setConfirmDeleteItem(-1)}
             />
-
             <Dialog
               header="Add stains to group"
               closable={true}
@@ -112,6 +118,12 @@ const StainField = ({ labId }: Props) => {
                 optionValue="id"
               />
             </Dialog>
+
+            <ErrorMessage name="stains">
+              {(msg) => (
+                <small className="p-error text-sm pt-10 pl-3">{msg}</small>
+              )}
+            </ErrorMessage>
           </>
         );
       }}

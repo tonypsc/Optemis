@@ -16,7 +16,13 @@ const useStainGroups = (labId: string) => {
     { onError: (error: Error) => {} }
   );
 
-  return { staingroups: data, isLoading, isError, error, refetch };
+  return {
+    staingroups: data,
+    isLoading,
+    isError,
+    error,
+    reloadStainGroups: refetch,
+  };
 };
 
 export { useStainGroups };

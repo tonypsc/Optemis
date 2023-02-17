@@ -6,6 +6,7 @@ const initialState: StainGroupState = {
   isNew: false,
   showForm: false,
   panelTitle: 'Group detail',
+  showDeleteDialog: false,
 };
 
 const reducer = (
@@ -14,7 +15,13 @@ const reducer = (
     type,
     payload,
   }: {
-    type: 'edit' | 'add' | 'reset' | 'setShowPanel' | 'selectGroup';
+    type:
+      | 'edit'
+      | 'add'
+      | 'setShowDeleteDialog'
+      | 'reset'
+      | 'setShowPanel'
+      | 'selectGroup';
     payload?: StainGroup | boolean;
   }
 ) => {
@@ -36,6 +43,13 @@ const reducer = (
         panelTitle: 'New group',
         selectedStainGroup: undefined,
       };
+    case 'setShowDeleteDialog':
+      return {
+        ...state,
+        isNew: false,
+        showForm: false,
+        showDeleteDialog: payload as boolean,
+      };
     case 'setShowPanel':
       return { ...state, showPanel: payload as boolean };
     case 'reset':
@@ -45,6 +59,7 @@ const reducer = (
         isNew: false,
         panelTitle: 'Group details',
         selectedStainGroup: undefined,
+        showDeleteDialog: false,
       };
     case 'selectGroup':
       return {
@@ -62,7 +77,14 @@ const reducer = (
 
 const useStainGroupReducer = () => {
   const [
-    { selectedStainGroup, showPanel, isNew, showForm, panelTitle },
+    {
+      selectedStainGroup,
+      showPanel,
+      isNew,
+      showForm,
+      panelTitle,
+      showDeleteDialog,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
 
@@ -71,6 +93,8 @@ const useStainGroupReducer = () => {
 
   const edit = () => dispatch({ type: 'edit' });
   const add = () => dispatch({ type: 'add' });
+  const setShowDeleteDialog = (show: boolean) =>
+    dispatch({ type: 'setShowDeleteDialog', payload: show });
   const reset = () => dispatch({ type: 'reset' });
   const closePanel = () => dispatch({ type: 'setShowPanel', payload: false });
 
@@ -85,6 +109,8 @@ const useStainGroupReducer = () => {
     showForm,
     panelTitle,
     closePanel,
+    showDeleteDialog,
+    setShowDeleteDialog,
   };
 };
 
@@ -94,6 +120,7 @@ type StainGroupState = {
   isNew: boolean;
   showForm: boolean;
   panelTitle: string;
+  showDeleteDialog?: boolean;
 };
 
 export { useStainGroupReducer };

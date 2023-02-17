@@ -7,16 +7,21 @@ import { faTimes, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { ErrorMessage, ListSkeleton, NoRecord } from '../../shared';
 import { StainGroup } from '../../context/optemis';
 
-import { useStainGroups } from '../hook/useStainGroups';
+import {
+  useStainGroups,
+  useStainGroupReducer,
+  useCreateStainGroup,
+  useUpdateStainGroup,
+} from '../hook';
 import { StainGroupListItem } from './StainGroupListItem';
-import { useStainGroupReducer } from '../hook/useStainGroupReducer';
 import { StainGroupDetail } from './StainGroupDetail';
 import { StainGroupFormContainer } from './StainGroupFormContainer';
 
 import './StainGroupContainer.css';
 
 const StainGroupContainer = ({ labId }: Props) => {
-  const { staingroups, isLoading, isError, error } = useStainGroups(labId);
+  const { staingroups, isLoading, isError, error, reloadStainGroups } =
+    useStainGroups(labId);
   const {
     selectedStainGroup,
     showPanel,
@@ -26,9 +31,12 @@ const StainGroupContainer = ({ labId }: Props) => {
     isNew,
     showForm,
     panelTitle,
-    closePanel,
     setCurrentGroup,
   } = useStainGroupReducer();
+
+  const { createStainGroup } = useCreateStainGroup(reset, reloadStainGroups);
+
+  const { updateStainGroup } = useUpdateStainGroup(reset, reloadStainGroups);
 
   const { width } = useWindowSize();
 
@@ -43,8 +51,11 @@ const StainGroupContainer = ({ labId }: Props) => {
   };
 
   const handleSubmit = (stainGroup: StainGroup) => {
-    console.log(stainGroup);
-    closePanel();
+    if (isNew) {
+      createStainGroup(stainGroup);
+    } else {
+      updateStainGroup(stainGroup);
+    }
   };
 
   return (
@@ -85,13 +96,19 @@ const StainGroupContainer = ({ labId }: Props) => {
               <span>{panelTitle}</span>
               <div>
                 {!showForm && (
-                  <Button className="p-button-text p-button-sm" onClick={edit}>
-                    <FontAwesomeIcon icon={faPencil} title="Edit group" />
-                  </Button>
+                  <Button
+                    className="p-button-text p-button-sm"
+                    onClick={edit}
+                    icon={
+                      <FontAwesomeIcon icon={faPencil} title="Edit group" />
+                    }
+                  />
                 )}
-                <Button className="p-button-text p-button-sm" onClick={reset}>
-                  <FontAwesomeIcon icon={faTimes} title="Close panel" />
-                </Button>
+                <Button
+                  className="p-button-text p-button-sm"
+                  onClick={reset}
+                  icon={<FontAwesomeIcon icon={faTimes} title="Close panel" />}
+                />
               </div>
             </div>
             <div className="right-panel-container">

@@ -69,7 +69,7 @@ const update = async <T extends Resource>(
   resource: Resource,
   signal?: AbortSignal
 ) => {
-  const data = await client(endpoint, {
+  const data = await client(`${endpoint}/${resource.id}`, {
     method: 'PUT',
     body: JSON.stringify(resource),
     signal,

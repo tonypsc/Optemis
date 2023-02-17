@@ -65,40 +65,67 @@
   ],
   "staingroup": [
     {
-      "description": "Acid desease diagnose",
-      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
-      "id": "7wnsYg2",
-      "createdAt": 1676502575261,
-      "inactive": true,
+      "description": "Covid diagnose",
       "stains": [
         {
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
           "description": "Crystal violet",
-          "labId": "0658b46a-abe2-11ed-afa1-0242ac58",
-          "id": "rWYxnkn",
-          "createdAt": 1676502575260
+          "id": "0658b46a-abe2-11ed-ede1-0242aced",
+          "createdAt": 1676502575262
+        }
+      ],
+      "inactive": false,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "createdAt": 1676655358201,
+      "id": "3FOvcap"
+    },
+    {
+      "description": "Commonly used",
+      "stains": [
+        {
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "description": "Crystal violet",
+          "id": "0658b46a-abe2-11ed-ede1-0242aced",
+          "createdAt": 1676502575262
         },
         {
           "description": "Methylene blue",
           "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
-          "id": "7wnsYgZ",
-          "createdAt": 1676502575261
+          "id": "rWYxnkn",
+          "createdAt": 1676502575260
+        },
+        {
+          "description": "Malachite green",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "FI2SFXA",
+          "createdAt": 1676502575259
         }
-      ]
+      ],
+      "inactive": true,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "createdAt": 1676653583504,
+      "id": "_fWx5Ht"
     },
     {
-      "description": "Most used",
-      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
-      "id": "7wnsYg1",
-      "createdAt": 1676502575262,
-      "inactive": false,
+      "description": "Malaria tests",
       "stains": [
         {
           "description": "Methylene blue",
           "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
           "id": "rWYxnkn",
           "createdAt": 1676502575260
+        },
+        {
+          "description": "Malachite green",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "FI2SFXA",
+          "createdAt": 1676502575259
         }
-      ]
+      ],
+      "inactive": false,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "createdAt": 1676656701841,
+      "id": "5qlxrpO"
     }
   ]
 }

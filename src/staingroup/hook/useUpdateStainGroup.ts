@@ -11,12 +11,11 @@ const useUpdateStainGroup = (
   onSettled: () => void,
   reloadStainGroupData?: () => void
 ) => {
-  const createFn = async (stainGroup: StainGroup) => {
-    stainGroup.createdAt = new Date().getTime();
+  const updateFn = async (stainGroup: StainGroup) => {
     update<StainGroup>('staingroup', stainGroup);
   };
 
-  const { mutate: updateStainGroup, isLoading } = useMutation(createFn, {
+  const { mutate: updateStainGroup, isLoading } = useMutation(updateFn, {
     onError: (error: Error) => {
       displayNotificationError(error);
     },
