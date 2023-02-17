@@ -31,6 +31,10 @@ const client = async (
       throw new Error('Forbidden', {
         cause: { name: '403', message: 'Forbidden' },
       });
+    case 404:
+      throw new Error('Not found', {
+        cause: { name: '404', message: 'Not found' },
+      });
     default:
       throw new Error('Internal server error', {
         cause: { name: '500', message: 'Oops. somtething went wrong' },
