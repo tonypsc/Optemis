@@ -72,7 +72,6 @@ const useStainGroupReducer = () => {
   const edit = () => dispatch({ type: 'edit' });
   const add = () => dispatch({ type: 'add' });
   const reset = () => dispatch({ type: 'reset' });
-  const openPanel = () => dispatch({ type: 'setShowPanel', payload: true });
   const closePanel = () => dispatch({ type: 'setShowPanel', payload: false });
 
   return {
@@ -85,7 +84,6 @@ const useStainGroupReducer = () => {
     isNew,
     showForm,
     panelTitle,
-    openPanel,
     closePanel,
   };
 };

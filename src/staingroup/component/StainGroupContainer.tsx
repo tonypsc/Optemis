@@ -25,7 +25,6 @@ const StainGroupContainer = ({ labId }: Props) => {
     isNew,
     showForm,
     panelTitle,
-    openPanel,
     closePanel,
     setCurrentGroup,
   } = useStainGroupReducer();
