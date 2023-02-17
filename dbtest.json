@@ -1,0 +1,152 @@
+{
+  "country": [
+    {
+      "id": "FR",
+      "name": "France",
+      "allowDuplicates": false
+    },
+    {
+      "id": "SW",
+      "name": "Sweden",
+      "allowDuplicates": true
+    }
+  ],
+  "lab": [
+    {
+      "id": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "name": "First France lab",
+      "countryId": "FR",
+      "partOf": "parent-organization"
+    },
+    {
+      "id": "0658b46a-abe2-11ed-afa1-0242ac11",
+      "name": "Standard France lab",
+      "countryId": "FR",
+      "partOf": "parent-organization"
+    },
+    {
+      "id": "0658b46a-abe2-11ed-afa1-0242ac13",
+      "name": "First Sweden lab",
+      "countryId": "SW",
+      "partOf": "parent-organization"
+    }
+  ],
+  "stain": [
+    {
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "description": "Crystal violet",
+      "id": "0658b46a-abe2-11ed-ede1-0242aced",
+      "createdAt": 1676502575262
+    },
+    {
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "description": "Basic fuchsin",
+      "id": "0658b46a-abe2-11ed-ada1-0242ac22",
+      "createdAt": 1676502575258
+    },
+    {
+      "description": "Malachite green",
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "id": "FI2SFXA",
+      "createdAt": 1676502575259
+    },
+    {
+      "description": "Methylene blue",
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "id": "rWYxnkn",
+      "createdAt": 1676502575260
+    },
+    {
+      "description": "Methylene blue",
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac13",
+      "id": "7wnsYgZ",
+      "createdAt": 1676502575261
+    }
+  ],
+  "staingroup": [
+    {
+      "description": "Covid diagnose",
+      "stains": [
+        {
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "rWYxnkn",
+          "createdAt": 1676502575260
+        },
+        {
+          "description": "Malachite green",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "FI2SFXA",
+          "createdAt": 1676502575259
+        }
+      ],
+      "inactive": false,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "createdAt": 1676655358201,
+      "id": "3FOvcap"
+    },
+    {
+      "description": "Commonly used",
+      "stains": [
+        {
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "description": "Crystal violet",
+          "id": "0658b46a-abe2-11ed-ede1-0242aced",
+          "createdAt": 1676502575262
+        },
+        {
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "rWYxnkn",
+          "createdAt": 1676502575260
+        },
+        {
+          "description": "Malachite green",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "FI2SFXA",
+          "createdAt": 1676502575259
+        }
+      ],
+      "inactive": true,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "createdAt": 1676653583504,
+      "id": "_fWx5Ht"
+    },
+    {
+      "description": "Malaria tests",
+      "stains": [
+        {
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "rWYxnkn",
+          "createdAt": 1676502575260
+        },
+        {
+          "description": "Malachite green",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "FI2SFXA",
+          "createdAt": 1676502575259
+        }
+      ],
+      "inactive": false,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "createdAt": 1676656701841,
+      "id": "5qlxrpO"
+    },
+    {
+      "description": "Bacteria detection",
+      "stains": [
+        {
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac13",
+          "id": "7wnsYgZ",
+          "createdAt": 1676502575261
+        }
+      ],
+      "inactive": false,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac13",
+      "createdAt": 1676662762313,
+      "id": "tuoaqlk"
+    }
+  ]
+}
