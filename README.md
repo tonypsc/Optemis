@@ -1,6 +1,6 @@
 # optemis
 
-Optemis tecnical evaluation
+Optemis technical evaluation
 
 System requirements
 
