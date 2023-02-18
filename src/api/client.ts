@@ -2,6 +2,12 @@ import { Resource } from '../context/optemis';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
+/**
+ * Handles all calls to api
+ * @param endpoint
+ * @param options
+ * @returns api response or error
+ */
 const client = async (
   endpoint: string,
   { method, body, signal }: RequestInit
@@ -42,6 +48,12 @@ const client = async (
   }
 };
 
+/**
+ * Calls client with GET requests of specific resources
+ * @param endpoint
+ * @param signal
+ * @returns resource array
+ */
 const read = async <T extends Resource>(
   endpoint: string,
   signal?: AbortSignal
@@ -54,6 +66,13 @@ const read = async <T extends Resource>(
   return data as T[];
 };
 
+/**
+ * Calls client with POST requests of specific resource
+ * @param endpoint
+ * @param resource
+ * @param signal
+ * @returns resource
+ */
 const create = async <T extends Resource>(
   endpoint: string,
   resource: Resource,
@@ -68,6 +87,13 @@ const create = async <T extends Resource>(
   return data as T;
 };
 
+/**
+ * Calls client with PUT requests of specific resource
+ * @param endpoint
+ * @param resource
+ * @param signal
+ * @returns resource
+ */
 const update = async <T extends Resource>(
   endpoint: string,
   resource: Resource,

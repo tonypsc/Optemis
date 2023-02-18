@@ -17,7 +17,9 @@ const StainField = ({ labId }: Props) => {
   const { stains, isLoading } = useStains(labId);
   const [confirmDeleteItem, setConfirmDeleteItem] = useState(-1);
   const [showModal, setShowModal] = useState(false);
+  // Stains selected in modal
   const [selectedStains, setSelectedStains] = useState<string[]>([]);
+  // Selected country from context
   const { country } = useCountryContext();
 
   return (
@@ -41,6 +43,7 @@ const StainField = ({ labId }: Props) => {
           setErrors({ ...errors, stains: undefined });
         };
 
+        // Generate or remove error for field if group contains stains
         if (!values.stains || values.stains.length === 0) {
           errors.stains = 'Group must contain stains';
         } else {

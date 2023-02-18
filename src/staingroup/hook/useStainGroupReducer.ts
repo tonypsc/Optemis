@@ -75,6 +75,10 @@ const reducer = (
   }
 };
 
+/**
+ * Create state variables and functions for StainGroupContainer view
+ * @returns object containing state and setters
+ */
 const useStainGroupReducer = () => {
   const [
     {

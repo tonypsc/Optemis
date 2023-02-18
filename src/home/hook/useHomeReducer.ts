@@ -27,6 +27,10 @@ const reducer = (
   }
 };
 
+/**
+ * Create state variables and functions for Home view
+ * @returns object containing state
+ */
 const useHomeReducer = () => {
   const [{ selectedLab, selectedCountry, currentView }, dispatch] = useReducer(
     reducer,
