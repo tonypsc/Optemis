@@ -70,6 +70,7 @@ const StainField = ({ labId }: Props) => {
               {values.stains && values.stains.length > 0 ? (
                 values.stains.map((stain: Stain, index: number) => (
                   <StainListItem
+                    key={stain.id}
                     stain={stain}
                     external
                     allowDelete
