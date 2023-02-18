@@ -61,6 +61,12 @@
       "labId": "0658b46a-abe2-11ed-afa1-0242ac13",
       "id": "7wnsYgZ",
       "createdAt": 1676502575261
+    },
+    {
+      "description": "dedd",
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac11",
+      "createdAt": 1676734213560,
+      "id": "V2-2pwS"
     }
   ],
   "staingroup": [
@@ -147,6 +153,21 @@
       "labId": "0658b46a-abe2-11ed-afa1-0242ac13",
       "createdAt": 1676662762313,
       "id": "tuoaqlk"
+    },
+    {
+      "description": "dererer",
+      "stains": [
+        {
+          "description": "dedd",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac11",
+          "createdAt": 1676734213560,
+          "id": "V2-2pwS"
+        }
+      ],
+      "inactive": false,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac11",
+      "createdAt": 1676734223530,
+      "id": "-dkDDm-"
     }
   ]
 }
