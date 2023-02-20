@@ -3,12 +3,12 @@
     {
       "id": "FR",
       "name": "France",
-      "allowDuplicates": false
+      "allowDuplicates": true
     },
     {
       "id": "SW",
       "name": "Sweden",
-      "allowDuplicates": true
+      "allowDuplicates": false
     }
   ],
   "lab": [
