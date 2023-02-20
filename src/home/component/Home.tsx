@@ -2,7 +2,6 @@ import { TabMenu } from 'primereact/tabmenu';
 
 import { LabSelector } from '../../lab';
 import { Head } from '../../shared';
-import { Lab, Country } from '../../context/optemis';
 import { LoadingView, ErrorView } from '../../shared';
 import { StainContainer } from '../../stain';
 import { StainGroupContainer } from '../../staingroup';
