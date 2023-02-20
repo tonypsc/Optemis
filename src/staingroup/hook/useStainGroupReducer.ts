@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import { StainGroup } from '../../context/optemis';
 
 const initialState: StainGroupState = {
-  showPanel: true,
+  showPanel: false,
   isNew: false,
   showForm: false,
   panelTitle: 'Group detail',
