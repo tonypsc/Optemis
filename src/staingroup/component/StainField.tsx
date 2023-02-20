@@ -98,7 +98,7 @@ const StainField = ({ labId }: Props) => {
               closable={true}
               draggable={false}
               visible={showModal}
-              style={{ width: '25vw' }}
+              style={{ width: '45vh', minWidth: '300px' }}
               onHide={() => setShowModal(false)}
               footer={
                 <div>
