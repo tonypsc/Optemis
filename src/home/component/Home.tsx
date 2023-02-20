@@ -32,12 +32,12 @@ const Home = () => {
   } = useCountries();
   const { labs, isLoading: isLoadingLabs } = useLabs(selectedCountry?.id);
 
-  const handleSelectLab = (lab?: Lab) => {
-    setCurrentLab(lab);
+  const handleSelectLab = (id?: string) => {
+    setCurrentLab(labs?.find((lab) => lab.id === id));
   };
 
-  const handleSelectCountry = (country: Country) => {
-    setCurrentCountry(country);
+  const handleSelectCountry = (id: string) => {
+    setCurrentCountry(countries?.find((country) => country.id === id));
   };
 
   if (isLoadingCountries) return <LoadingView />;
@@ -52,6 +52,8 @@ const Home = () => {
         onSelectLab={handleSelectLab}
         onSelectCountry={handleSelectCountry}
         isLoading={isLoadingCountries || isLoadingLabs}
+        selectedCountry={selectedCountry}
+        selectedLab={selectedLab}
       />
       <CountryContextProvider
         country={selectedCountry!}

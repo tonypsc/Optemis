@@ -1,5 +1,4 @@
 import { Dropdown } from 'primereact/dropdown';
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,34 +12,33 @@ const LabSelector = ({
   onSelectLab,
   onSelectCountry,
   isLoading,
+  selectedCountry,
+  selectedLab,
 }: Props) => {
-  const [country, selectCountry] = useState<Country>();
-  const [lab, selectLab] = useState<Lab>();
-
   return (
     <div className="lab-container">
       <div>Laboratory selection</div>
       <Dropdown
-        value={country}
+        value={selectedCountry?.id}
         options={countries}
         optionLabel="name"
+        optionValue="id"
         placeholder="Select a Country"
         className="country-dropdown"
         onChange={(e) => {
-          selectCountry(e.target.value);
           onSelectCountry(e.target.value);
-          onSelectLab();
+          onSelectLab(undefined);
         }}
         disabled={isLoading}
       />
       <Dropdown
-        value={lab}
+        value={selectedLab?.id}
         options={labs}
         optionLabel="name"
+        optionValue="id"
         placeholder="Select a Laboratory"
         className="lab-dropdown"
         onChange={(e) => {
-          selectLab(e.target.value);
           onSelectLab(e.target.value);
         }}
         disabled={isLoading}
@@ -55,9 +53,11 @@ const LabSelector = ({
 type Props = {
   countries: Country[];
   labs: Lab[];
-  onSelectLab(lab?: Lab): void;
-  onSelectCountry(country: Country): void;
+  onSelectLab(id?: string): void;
+  onSelectCountry(id: string): void;
   isLoading: boolean;
+  selectedCountry?: Country;
+  selectedLab?: Lab;
 };
 
 export { LabSelector };
