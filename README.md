@@ -1,6 +1,6 @@
 # optemis
 
-Optemis technical evaluation
+Optemis react example
 
 System requirements
 
