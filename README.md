@@ -17,4 +17,4 @@ To start react proyect run "yarn start"
 
 For testing purposes use "yarn serve-testing-api" and "yarn test"
 
-This exercise asumes the logged in user selected an organization which may contain one or more laboratories in different countries
+This exercise asumes the logged in user selected an organization which may contain one or more laboratories in different countries.
