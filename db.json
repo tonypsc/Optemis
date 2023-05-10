@@ -168,6 +168,27 @@
       "labId": "0658b46a-abe2-11ed-afa1-0242ac11",
       "createdAt": 1676734223530,
       "id": "-dkDDm-"
+    },
+    {
+      "description": "nuevo",
+      "stains": [
+        {
+          "description": "Methylene blue",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "rWYxnkn",
+          "createdAt": 1676502575260
+        },
+        {
+          "description": "Malachite green",
+          "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+          "id": "FI2SFXA",
+          "createdAt": 1676502575259
+        }
+      ],
+      "inactive": false,
+      "labId": "0658b46a-abe2-11ed-afa1-0242ac12",
+      "createdAt": 1676907587869,
+      "id": "pm5Hblo"
     }
   ]
 }

@@ -9,7 +9,7 @@ import { StainGroupContainer } from '../../staingroup';
 import { useHomeReducer } from '../hook/useHomeReducer';
 import { useCountries } from '../hook/useCountries';
 import { useLabs } from '../hook/useLabs';
-import { CountryContextProvider } from '../context/countryContextProvider';
+import { CountryContextProvider } from '../context/CountryContextProvider';
 
 import './Home.css';
 
